@@ -1,36 +1,53 @@
-import { Flow } from "../icons/flow";
-import { Intellisense } from "../icons/intellisense";
-import { Keyboard } from "../icons/keyboard";
-import { MagicBranch } from "../icons/magic-branch";
-import { Prebuilds } from "../icons/prebuilds";
-import { Preview } from "../icons/preview";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+import IconCss from "../icons/IconCss";
+import IconExpress from "../icons/IconExpress";
+import IconHtml from "../icons/IconHtml";
+import IconJavascript from "../icons/IconJavascript";
+import IconMongodb from "../icons/IconMongodb";
+import IconNode from "../icons/IconNode";
+import IconReact from "../icons/IconReact";
+import IconTailwind from "../icons/IconTailwind";
+import IconTypescript from "../icons/IconTypescript";
+
+
 const content = [
   {
-    icon: Prebuilds,
-    title: "test",
+    icon: IconReact,
+    title: "React",
   },
   {
-    icon: Intellisense,
-    title: "test",
+    icon: IconTypescript,
+    title: "Typescript",
   },
   {
-    icon: Flow,
-    title: "test",
+    icon: IconTailwind,
+    title: "Tailwind",
   },
   {
-    icon: MagicBranch,
-    title: "test",
+    icon: IconExpress,
+    title: "Express",
   },
   {
-    icon: Keyboard,
-    title: "test",
+    icon: IconNode,
+    title: "Node",
   },
   {
-    icon: Preview,
-    title: "test",
+    icon: IconMongodb,
+    title: "Mongodb",
+  },
+  {
+    icon: IconHtml,
+    title: "Html",
+  },
+  {
+    icon: IconCss,
+    title: "Css",
+  },
+  {
+    icon: IconJavascript,
+    title: "Javascript",
   },
 ];
 
@@ -48,16 +65,24 @@ export const Skills = () => {
     <motion.section
       ref={targetRef}
       style={{ opacity, y }}
-      className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-40  sm:grid-cols-2 gap-40"
+     
     >
-      {content.map(({ icon: Icon, title }) => (
-        <div key={title} className="flex flex-col items-center">
-          <span className="iconWrapper padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]">
-            <Icon className="h-12 w-12" />
-          </span>
-          <h3 className="mb-2 text-4xl text-white">{title}</h3>
+      <div className="flex flex-col items-center">
+        <div className="text-white text-[100px]">Skills</div>
+        <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-40  sm:grid-cols-2 gap-24">
+          {content.map(({ icon:Icon, title }) => (
+            <div key={title} className="flex flex-col gap-5 items-center">
+              <div className="relative flex items-center justify-center">
+                <span className="iconWrapper padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]" />
+                <div className="text-white mb-3 z-20 absolute">
+                  <Icon />
+                </div>
+              </div>
+              <h3 className="mb-2 text-4xl text-white">{title}</h3>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </motion.section>
   );
 };

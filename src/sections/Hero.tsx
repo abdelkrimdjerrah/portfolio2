@@ -1,4 +1,3 @@
-import { GithubIcon } from "../icons/github";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
