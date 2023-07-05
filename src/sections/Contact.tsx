@@ -23,10 +23,10 @@ const content = [
 
 export const Contact = () => {
   return (
-    <section className="relative z-10 h-screen bg-[#7b61ff] flex items-center justify-center">
-      <div className="flex flex-col items-center">
+    <section className="relative z-10 h-screen bg-[#009bc1] flex items-center justify-center">
+      <div className="flex flex-col gap-20 items-center">
         <div className="text-black text-[100px]">Contact</div>
-        <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-40  sm:grid-cols-3 gap-24">
+        <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3  sm:grid-cols-3 gap-24">
           {content.map(({ icon: Icon, title, url }) => (
             <div key={title} className="flex flex-col gap-5 items-center">
               <IconComponent Icon={Icon} url={url} />
