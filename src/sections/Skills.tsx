@@ -11,32 +11,26 @@ const content = [
   {
     icon: Prebuilds,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
   {
     icon: Intellisense,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
   {
     icon: Flow,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
   {
     icon: MagicBranch,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
   {
     icon: Keyboard,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
   {
     icon: Preview,
     title: "test",
-    text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid exercitationem sint labore vitae, ipsa eius mollitia minus omnis iste ea voluptatem adipisci vero enim error libero odit id nulla. Nihil.",
   },
 ];
 
@@ -54,15 +48,14 @@ export const Skills = () => {
     <motion.section
       ref={targetRef}
       style={{ opacity, y }}
-      className="mx-auto grid w-full max-w-[120rem] grid-cols-3 gap-40 py-48"
+      className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-40  sm:grid-cols-2 gap-40"
     >
-      {content.map(({ icon: Icon, title, text }) => (
-        <div key={title}>
-          <span className="padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]">
+      {content.map(({ icon: Icon, title }) => (
+        <div key={title} className="flex flex-col items-center">
+          <span className="iconWrapper padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]">
             <Icon className="h-12 w-12" />
           </span>
           <h3 className="mb-2 text-4xl text-white">{title}</h3>
-          <p className="text-lg text-gray-500">{text}</p>
         </div>
       ))}
     </motion.section>
