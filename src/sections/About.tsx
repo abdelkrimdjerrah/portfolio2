@@ -1,4 +1,3 @@
-const abdelkrim_main = require("../images/abdelkrim_main.png");
 export const About = () => {
   return (
     // <div className="text-white w-full flex items-center justify-center gap-20 py-64">

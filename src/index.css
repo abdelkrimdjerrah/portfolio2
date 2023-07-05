@@ -97,3 +97,26 @@ body{
   to {transform: scale(1);}
 }
 
+
+.navigationBtn {
+  transform: scale(1.5);
+  margin: 0px 10px;
+  background: #009bc1;
+  border-radius: 50%;
+  box-shadow: 0 4px 30px rgba(0, 29, 35, 0.3);
+}
+
+@media only screen and (max-width: 600px) {
+  .navigationBtn {
+    display: none;
+  }
+}
+
+
+.swiper-pagination-bullet-active{
+  background: #009bc1 !important;
+}
+
+
+
+

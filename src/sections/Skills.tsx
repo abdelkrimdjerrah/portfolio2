@@ -10,6 +10,9 @@ import IconNode from "../icons/IconNode";
 import IconReact from "../icons/IconReact";
 import IconTailwind from "../icons/IconTailwind";
 import IconTypescript from "../icons/IconTypescript";
+import IconPhotoshop from "../icons/IconPhotoshop";
+import IconIllustrator from "../icons/IconIllustrator";
+import IconFigma from "../icons/IconFigma";
 
 
 const content = [
@@ -49,6 +52,18 @@ const content = [
     icon: IconJavascript,
     title: "Javascript",
   },
+  {
+    icon: IconIllustrator,
+    title: "Illustrator",
+  },
+  {
+    icon: IconFigma,
+    title: "Figma",
+  },
+  {
+    icon: IconPhotoshop,
+    title: "Photoshop",
+  },
 ];
 
 export const Skills = () => {
@@ -59,7 +74,7 @@ export const Skills = () => {
   });
 
   const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
-  const y = useTransform(scrollYProgress, [0.8, 1], ["0vh", "50vh"]);
+  const y = useTransform(scrollYProgress, [0.8, 1], ["0vh", "40vh"]);
 
   return (
     <motion.section
@@ -68,8 +83,8 @@ export const Skills = () => {
      
     >
       <div className="flex flex-col items-center py-64">
-        <div className="text-[#a0ecff] text-[100px]">Skills</div>
-        <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-20  sm:grid-cols-2 gap-24">
+        <div className="text-[#a0ecff] text-[70px] lg:text-[100px]">Skills</div>
+        <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-4 py-20  sm:grid-cols-3 grid-cols-2 gap-24">
           {content.map(({ icon:Icon, title }) => (
             <div key={title} className="flex flex-col gap-5 items-center">
               <div className="relative flex items-center justify-center">
