@@ -18,7 +18,7 @@ function PostSlider({ images }: PostSliderProps) {
   const swiperRef = useRef<SwiperCore>();
   
   return (
-    <div className="min-w-full my-1 object-fill overflow-hidden relative border rounded-2xl flex justify-center">
+    <div className=" my-1 object-fill max-h-[820px] max-w-[820px] overflow-hidden relative border rounded-2xl flex justify-center">
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         slidesPerView={1}

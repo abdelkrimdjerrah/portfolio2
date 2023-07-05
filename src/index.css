@@ -101,7 +101,8 @@ body{
 .navigationBtn {
   transform: scale(1.5);
   margin: 0px 10px;
-  background: #009bc1;
+  color: white;
+  background: #151515;
   border-radius: 50%;
   box-shadow: 0 4px 30px rgba(0, 29, 35, 0.3);
 }

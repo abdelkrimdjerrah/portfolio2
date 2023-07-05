@@ -3,6 +3,7 @@ import { Skills } from "./sections/Skills";
 import { Contact } from "./sections/Contact";
 import { About } from './sections/About'
 import { LiveProjects } from './sections/LiveProjects'
+import { UiUx } from './sections/UiUx'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
           <About />
           <Skills />
           <LiveProjects />
+          <UiUx />
           <Contact />
         </div>
     </main>
