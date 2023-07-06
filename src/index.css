@@ -34,6 +34,24 @@ body{
   font-family: Barlow;
 }
 
+
+
+#typing-demo {
+  overflow: hidden;
+  color: #a0ecff;
+  border-right: 1px solid;
+  animation: cursor-blink 0.5s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #a0ecff;
+  }
+}
+
 .headText{
   font-family: 'IBM Plex Mono', monospace;
 }
