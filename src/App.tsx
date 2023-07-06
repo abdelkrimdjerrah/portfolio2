@@ -8,9 +8,6 @@ import { Streamlined } from "./sections/StreamLines";
 
 
 function App() {
-  
-  document.title = "Abdelkrim Djerrah";
-
   return (
     <main className='bg-background'>
         <Hero />
