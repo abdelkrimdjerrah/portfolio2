@@ -67,7 +67,7 @@ export const Hero = () => {
         </div>
         <div className="  w-full lg:w-[45%] justify-center flex items-center">
           <div className="flex flex-col items-center lg:items-start">
-            <div className="text-[50px] lg:text-[80px] font-medium tracking-tight headText">
+            <div className="text-[50px] md:text-[80px] font-medium tracking-tight headText">
               Abdelkrim
             </div>
             <div className="text-[50px] md:text-[80px] font-medium leading-6 tracking-tight headText">
