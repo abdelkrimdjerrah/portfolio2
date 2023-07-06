@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 import { X } from "phosphor-react";
 import Button from "../components/Button";
+import { Image } from "phosphor-react";
 import PostSlider from "../components/PostSlider";
 
 const content = [
@@ -98,16 +99,40 @@ export const Project = ({
 
   const [showModal, setShowModal] = useState(false);
 
+  const [isHovering, setIsHovering] = useState(false);
+  const [isOutHovering, setIsOutHovering] = useState("");
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+    setIsOutHovering("");
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+    setIsOutHovering(" out ");
+  };
+
+
   return (
     <div className="px-6 py-10 transparent border-2 border-[#212121] bg-[#0d0d0d] rounded-3xl text-[#a0ecff] flex flex-col gap-10">
-      <img
-        src={thumb}
+      <div
+        className="relative cursor-pointer"
         onClick={() => {
           setShowModal(true);
         }}
-        className="rounded-xl cursor-pointer"
-        alt=""
-      />
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
+        <img src={thumb} className="rounded-xl cursor-pointer" alt="" />
+        {isHovering && (
+          <div
+            className={`h-full w-full absolute top-0 rounded-xl bg-[#6499af] bg-opacity-70 grid place-items-center`}
+          >
+            <Image size={35} />
+          </div>
+        )}
+      </div>
+
       <div className="flex flex-col gap-3">
         <div className="text-[25px] font-medium">{title}</div>
         <div className="text-2xl text-[#6499af]">{desc}</div>
@@ -116,7 +141,7 @@ export const Project = ({
         {live.length ? (
           <Button
             widthFull
-            className="bg-red-500"
+            className="bg-[#009bc1]"
             onClick={() => {
               openInNewTab(live);
             }}
@@ -133,7 +158,7 @@ export const Project = ({
         >
           Github
         </Button>
-        <Button
+        {/* <Button
           widthFull
           outlined
           onClick={() => {
@@ -141,7 +166,7 @@ export const Project = ({
           }}
         >
           Images
-        </Button>
+        </Button> */}
       </div>
       {showModal && (
         <Modal
