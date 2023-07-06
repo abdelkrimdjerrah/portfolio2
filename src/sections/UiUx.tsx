@@ -45,7 +45,7 @@ const content = [
       "https://firebasestorage.googleapis.com/v0/b/akalaty-ce8bd.appspot.com/o/files%2FFrame%203.png%20%20%20%20%20%20%202023-7-5%2023%3A27%3A35?alt=media&token=141cda15-0fdc-4d2c-9aa0-7d4446547719",
       "https://firebasestorage.googleapis.com/v0/b/akalaty-ce8bd.appspot.com/o/files%2FFrame%205.png%20%20%20%20%20%20%202023-7-5%2023%3A27%3A32?alt=media&token=6b1f3865-ba82-4262-a0e3-f65443bf5093",
     ],
-    desc: "A social media food app, I created it for learning backend technologies such as Node, Express and MongoDB. Still working on it .. ",
+    desc: "Bac Guide is an application to guide bac students, I did the UI/UX and later on I will implement it in React Native.",
   },
 ];
 
