@@ -127,17 +127,6 @@ export const Project = ({
         <div className="text-[25px] font-medium">{title}</div>
         <div className="text-2xl text-[#6499af]">{desc}</div>
       </div>
-      <div className="flex gap-3">
-        <Button
-          widthFull
-          outlined
-          onClick={() => {
-            setShowModal(true);
-          }}
-        >
-          Images
-        </Button>
-      </div>
       {showModal && (
         <Modal
           closeModal={() => {
