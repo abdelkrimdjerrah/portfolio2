@@ -4,6 +4,7 @@ import { Contact } from "./sections/Contact";
 import { About } from './sections/About'
 import { LiveProjects } from './sections/LiveProjects'
 import { UiUx } from './sections/UiUx'
+import { Streamlined } from "./sections/StreamLines";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Skills />
           <LiveProjects />
           <UiUx />
+          <Streamlined />
           <Contact />
         </div>
     </main>
