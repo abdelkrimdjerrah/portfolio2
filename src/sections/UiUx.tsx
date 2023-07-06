@@ -56,7 +56,7 @@ export const UiUx = () => {
     <div className="pt-40">
       <div className="flex flex-col gap-20 items-center ">
         <div className="text-[#a0ecff] text-[70px] lg:text-[100px] tracking-tight headText">
-          Dev Projects
+          Design
         </div>
         <div className="mx-auto grid w-full justify-between px-20 lg:grid-cols-3 md:grid-cols-2 md:grid py-20  sm:flex sm:flex-col gap-20">
           {content.map(({ title, thumb, images, desc }) => (
