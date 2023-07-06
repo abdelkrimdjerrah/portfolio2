@@ -48,30 +48,14 @@ const content = [
    
   ];
 
-export const UiUx = () => {
-
-    const targetRef = useRef<HTMLDivElement | null>(null);
-    const { scrollYProgress } = useScroll({
-      target: targetRef,
-      offset: ["start end", "end start"],
-    });
-  
-    const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
-    const y = useTransform(scrollYProgress, [0.8, 1], ["0vh", "40vh"]);
-  
+export const UiUx = () => {  
 
   return (
-
-    <motion.section
-    ref={targetRef}
-    style={{ opacity, y }}
-   
-  >
-     <div className="py-80">
+       <div className="pt-40">
          <div className="flex flex-col gap-20 items-center ">
-          <div className="text-[#a0ecff] text-[70px] lg:text-[100px]">Design</div>
-          <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3 py-20  sm:grid-cols-2 gap-24">
-            {content.map(({ title, thumb, images, desc }) => (
+          <div className="text-[#a0ecff] text-[70px] lg:text-[100px]">Dev Projects</div>
+          <div className="mx-auto grid w-full justify-between px-20 lg:grid-cols-3 md:grid-cols-2 md:grid py-20  sm:flex sm:flex-col gap-20">
+            {content.map(({ title, thumb, images, desc}) => (
                 <div key={title} className="flex flex-col gap-5 items-center">
                   <Project title={title} thumb={thumb} images={images} desc={desc}/>
                 </div>
@@ -79,9 +63,7 @@ export const UiUx = () => {
             
         </div>
           </div>
-    </div>
-  </motion.section>
-   
+    </div>   
   )
 }
 
@@ -102,11 +84,11 @@ export const Project = ({ title, thumb, images, desc}: InterfaceProjectComponent
  const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="p-10 bg-white rounded-3xl flex flex-col gap-5">
-      <img src={thumb} onClick={()=>{setShowModal(true)}} className="rounded-xl" alt="" />
-      <div>
+    <div className="p-10 transparent border-2 border-[#212121] bg-[#0d0d0d] rounded-3xl text-[#a0ecff] flex flex-col gap-10">
+      <img src={thumb} onClick={()=>{setShowModal(true)}} className="rounded-xl cursor-pointer" alt="" />
+      <div className="flex flex-col gap-3">
         <div className="text-[25px] font-medium">{title}</div>
-        <div className="text-2xl">{desc}</div>
+        <div className="text-2xl text-[#6499af]">{desc}</div>
       </div>
       <div className="flex gap-3">
             <Button widthFull outlined onClick={()=>{setShowModal(true)}}>Images</Button>
@@ -120,16 +102,21 @@ export const Project = ({ title, thumb, images, desc}: InterfaceProjectComponent
           <div onClick={() => setShowModal(false)}>
               <X
                 size={28}
-                className="text-[#a0ecff] cursor-pointer hover:text-black absolute right-10 top-10"
+                className="text-[#a0ecff] cursor-pointer absolute right-10 top-10"
               />
             </div>
           <div
             onClick={(e) => e.stopPropagation()}
-            className="max-w-[75%] min-w-[75%] h-fit p-5 rounded-2xl relative"
+            className="w-full flex justify-center h-fit rounded-2xl relative"
           >
-            
-
             <PostSlider images={images}/>
+
+            {/* added this since we gave post slider full width to center in middle,
+            and as we see , we already did e.stopPropagation to stop unmounting the modal if we touch on pictures,
+            but we made the wide full ! so the right or left side has also e.stopPropagation   */}
+            <div className="w-full absolute h-full" onClick={() => setShowModal(false)} />
+
+
           </div>
         </Modal>
       )}

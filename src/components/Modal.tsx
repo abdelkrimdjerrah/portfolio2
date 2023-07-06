@@ -15,11 +15,12 @@ const Modal: React.FC<Props> = ({ closeModal, children }) => {
 
   return (
     <div
-      onClick={closeModal}
-      className="z-30 bg-gray-900 text-[#a0ecff] bg-opacity-10 backdrop-blur-[3px] fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center"
-    >
-      {children}
-    </div>
+    onClick={closeModal}
+    className="z-30 bg-gray-900 text-[#a0ecff] bg-opacity-10 overflow-hidden backdrop-blur-[1px] fixed inset-0 flex items-center justify-center"
+  >
+    {children}
+  </div>
+  
   );
 };
 

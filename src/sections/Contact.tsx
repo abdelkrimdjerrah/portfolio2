@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import IconGithub from "../icons/IconGithub";
 import IconLinkedin from "../icons/IconLinkedin";
 import IconInstagram from "../icons/IconInstagram";
+import { EnvelopeSimple } from "phosphor-react";
 
 const content = [
   {
@@ -23,9 +24,13 @@ const content = [
 
 export const Contact = () => {
   return (
-    <section className="relative z-10 h-screen bg-[#009bc1] flex items-center justify-center">
+    <section className="relative z-10 h-screen flex items-center justify-center ">
       <div className="flex flex-col gap-20 items-center">
-        <div className="text-black text-[70px] lg:text-[100px]">Contact</div>
+        <div className=" text-[70px] lg:text-[100px] leading-[80px] text-[#a0ecff]">Contact</div>
+        <div className="text-[20px] flex gap-3 items-center text-[#6499af]">
+          <EnvelopeSimple size={35}/>
+          abdelkrimdjerrah@gmail.com
+        </div>
         <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-3  sm:grid-cols-3 gap-24">
           {content.map(({ icon: Icon, title, url }) => (
             <div key={title} className="flex flex-col gap-5 items-center">

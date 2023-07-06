@@ -87,6 +87,20 @@ body{
   align-items: center;
 }
 
+.iconWrapper_card::after{
+  content: "";
+  width: 95px;
+  height: 95px;
+  background: #101010;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #009bc1;
+  box-shadow: inset 20px 20px 20px #0000008c;
+}
+
 
 .out{
   animation: animateLogoOut 0.2s;
@@ -118,6 +132,8 @@ body{
   background: #009bc1 !important;
 }
 
-
-
-
+.transparent {
+  background: rgba(61, 61, 61, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
