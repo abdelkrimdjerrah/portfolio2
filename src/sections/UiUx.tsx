@@ -55,7 +55,7 @@ export const UiUx = () => {
   return (
     <div className="pt-40">
       <div className="flex flex-col gap-20 items-center ">
-        <div className="text-[#a0ecff] text-[70px] lg:text-[100px] tracking-tight headText">
+        <div className="text-[#a0ecff] text-[60px] md:text-[100px] text-center tracking-tight headText">
           Design
         </div>
         <div className="mx-auto grid w-full justify-between px-20 lg:grid-cols-3 md:grid-cols-2 md:grid py-20  sm:flex sm:flex-col gap-20">

@@ -36,7 +36,7 @@ export const Contact = () => {
   return (
     <section className="relative z-10 pb-48 lg:pb-80 flex items-center justify-center ">
       <div className="flex flex-col gap-16 items-center">
-        <div className=" text-[70px] lg:text-[100px] leading-[80px] tracking-tight headText text-white">
+        <div className=" text-[60px] md:text-[100px] text-center leading-[80px] tracking-tight headText text-white">
           Contact
         </div>
         <div className="text-[20px] flex gap-3 items-center text-[#6499af]">

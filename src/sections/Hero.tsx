@@ -67,14 +67,14 @@ export const Hero = () => {
         </div>
         <div className="  w-full lg:w-[45%] justify-center flex items-center">
           <div className="flex flex-col items-center lg:items-start">
-            <div className="text-[80px] font-medium tracking-tight headText">
+            <div className="text-[50px] lg:text-[80px] font-medium tracking-tight headText">
               Abdelkrim
             </div>
-            <div className="text-[80px] font-medium leading-6 tracking-tight headText">
+            <div className="text-[50px] md:text-[80px] font-medium leading-6 tracking-tight headText">
               Djerrah
             </div>
 
-            <div className="wrapper text-[25px] mt-20 text-[#a0ecff] border-[#a0ecff] h-10">
+            <div className="wrapper text-[15px] lg:text-[25px] mt-20 text-[#a0ecff] border-[#a0ecff] h-10">
               <h1 ref={typingElementRef} id="typing-demo" className="typing-demo"></h1>
             </div>
             
@@ -82,7 +82,6 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className=" fixed text-white before:pointer-events-none before:fixed before:inset-0 before:z-0 before:bg-[radial-gradient(circle_farthest-side_at_var(--x,_100%)_var(--y,_200%),_var(--color-secondary)_0%,_transparent_100%)] before:opacity-40" />
 
       {/* <motion.section
       style={{ opacity }}

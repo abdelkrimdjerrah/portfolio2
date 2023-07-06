@@ -28,7 +28,7 @@ export const Streamlined = () => {
       ref={targetRef}
       className="mt-[40vh] flex h-[300vh] items-start justify-start"
     >
-      <div className="sticky top-1/2 left-1/2 min-h-[50rem] min-w-[25rem] lg:min-w-[50rem] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap before:absolute before:inset-0 before:scale-[var(--scale)] before:border-t-0 before:border-l-0 before:border-r-0 before:border-[2.5rem] before:border-[#a0ecff] before:opacity-[var(--opacity-border)]">
+      <div className="sticky top-1/2 md: left-1/2 min-h-[50rem] min-w-[15rem] lg:min-w-[50rem] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap before:absolute before:inset-0 before:scale-[var(--scale)] before:border-t-0 before:border-l-0 before:border-r-0 before:border-[3rem] before:border-[#a0ecff] before:opacity-[var(--opacity-border)]">
 
         <motion.p
           aria-hidden
@@ -38,7 +38,6 @@ export const Streamlined = () => {
           Ready to work.
         </motion.p>
 
-        <span className="absolute left-[calc(50%*var(--scale)+50%)] top-0 z-10 h-full w-[50vw] origin-left scale-[var(--scale)] opacity-[var(--opacity-border)]" />
       </div>
     </motion.section>
   );

@@ -10,6 +10,12 @@ import { Streamlined } from "./sections/StreamLines";
 function App() {
   return (
     <main className='bg-background'>
+
+
+    <div className=" fixed mesh opacity-50 w-[500px] h-[500px] left-[75%] top-[75%] rounded-full md:left-[80%] md:top-[70%] bg-[#009bc1]" />
+
+
+        
         <Hero />
         <div className="relative z-10 w-full overflow-x-clip">
           <About />
