@@ -117,7 +117,7 @@ export const Project = ({
         <img src={thumb} className="rounded-xl cursor-pointer" alt="" />
         {isHovering && (
           <div
-            className={`h-full w-full absolute top-0 rounded-xl bg-[#6499af] bg-opacity-70 grid place-items-center`}
+            className={`h-full w-full absolute top-0 rounded-xl bg-[#000000] bg-opacity-70 grid place-items-center`}
           >
             <Image size={35} />
           </div>
