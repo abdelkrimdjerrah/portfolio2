@@ -142,11 +142,14 @@ body{
 
 .navigationBtn {
   transform: scale(1.5);
-  margin: 0px 10px;
-  color: white;
-  background: #151515;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
-  box-shadow: 0 4px 30px rgba(0, 29, 35, 0.3);
+  color: black;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin: 0 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 @media only screen and (max-width: 600px) {
