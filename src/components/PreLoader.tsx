@@ -40,6 +40,8 @@ const PreLoader = () => {
   }, []);
 
   useEffect(() => {
+    console.log(`windowLoaded : ${windowLoaded}`)
+    console.log(`finishedAnimation : ${finishedAnimation}`)
     if (windowLoaded && finishedAnimation) {
       StartFinalAnimations();
     }
