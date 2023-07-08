@@ -4,8 +4,8 @@ import { gsap } from "gsap";
 
 const PreLoader = () => {
   const containerRef = useRef(null);
-  const [finishedAnimation, setFinishedAnimation] = useState(false);
 
+  let finishedAnimation = false
   let windowLoaded = false
 
   const handleWindowLoad = () => {
@@ -24,7 +24,7 @@ const PreLoader = () => {
       delay: 0.5,
       duration: .1,
       onComplete: () => {
-        setFinishedAnimation(true)
+        finishedAnimation = true
         setTimeout(() => {
             if (windowLoaded) {
               StartFinalAnimations();
@@ -45,7 +45,7 @@ const PreLoader = () => {
     if (windowLoaded && finishedAnimation) {
       StartFinalAnimations();
     }
-  }, [windowLoaded]);
+  }, [windowLoaded, finishedAnimation]);
 
 
 
