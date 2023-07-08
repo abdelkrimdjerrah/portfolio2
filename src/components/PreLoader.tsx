@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 const PreLoader = () => {
   const containerRef = useRef(null);
-  let imageElement = document.getElementById('loaded')
+  // let imageElement = document.getElementById('loaded')
   useEffect(() => {
     document.body.style.overflow = "hidden";
     new SplitType(".preloader-text");
@@ -14,10 +14,6 @@ const PreLoader = () => {
       delay: 0.5,
       duration: 0.1,
       onComplete: () => {
-        while(!imageElement){
-          console.log(imageElement)
-          imageElement = document.getElementById('loaded')
-        }
         StartFinalAnimations();
       },
     });
