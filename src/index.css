@@ -55,9 +55,21 @@ body{
   }
 }
 
-.headText{
+.headText,
+.preloader-text{
   font-family: 'IBM Plex Mono', monospace;
 }
+
+.preloader-text{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  line-height: 7rem;
+}
+
+.char {
+  transform: translateY(115px);
+  transition: transform .5s;
+}
+
 .iconWrapper {
   width: 100px;
   height: 100px;
