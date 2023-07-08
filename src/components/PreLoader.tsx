@@ -2,37 +2,43 @@ import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
-const PreLoader = () => {
+const PreLoader = (isLoaded: any) => {
   const containerRef = useRef(null);
-  useEffect(() => {    
+  let finishedAnimation = false;
+
+  useEffect(() => {
     document.body.style.overflow = "hidden";
-    new SplitType('.preloader-text');
-    gsap.to('.char', {
+    new SplitType(".preloader-text");
+    gsap.to(".char", {
       y: 0,
       stagger: 0.05,
       delay: 0.5,
-      duration: .1,
+      duration: 0.1,
       onComplete: () => {
-          gsap.to('.char', {
-            y: -100,
-            stagger: 0.05,
-            delay: 3,
-            duration: .1,
-            onComplete: () => {
-              gsap.to(containerRef.current, {
-                height: 0,
-                duration: 1,
-                onComplete: () => {
-                  document.body.style.overflow = "unset";
-                }
-              });
-            }
-          });
-      }
+        if (isLoaded) {
+          StartFinalAnimations();
+        }
+      },
     });
-
   }, []);
 
+  const StartFinalAnimations = () => {
+    gsap.to(".char", {
+      y: -100,
+      stagger: 0.05,
+      delay: 3,
+      duration: 0.1,
+      onComplete: () => {
+        gsap.to(containerRef.current, {
+          height: 0,
+          duration: 1,
+          onComplete: () => {
+            document.body.style.overflow = "unset";
+          },
+        });
+      },
+    });
+  };
 
   return (
     <div
