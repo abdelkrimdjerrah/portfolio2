@@ -4,18 +4,7 @@ import { gsap } from "gsap";
 
 const PreLoader = () => {
   const containerRef = useRef(null);
-
-  let finishedAnimation = false
-  let windowLoaded = false
-
-  const handleWindowLoad = () => {
-    windowLoaded = true;
-  };
-
-  useEffect(() => {
-
-  window.addEventListener("load", handleWindowLoad);
-    
+  useEffect(() => {    
     document.body.style.overflow = "hidden";
     new SplitType('.preloader-text');
     gsap.to('.char', {
@@ -24,48 +13,26 @@ const PreLoader = () => {
       delay: 0.5,
       duration: .1,
       onComplete: () => {
-        finishedAnimation = true
-        setTimeout(() => {
-            if (windowLoaded) {
-              StartFinalAnimations();
+          gsap.to('.char', {
+            y: -100,
+            stagger: 0.05,
+            delay: 3,
+            duration: .1,
+            onComplete: () => {
+              gsap.to(containerRef.current, {
+                height: 0,
+                duration: 1,
+                onComplete: () => {
+                  document.body.style.overflow = "unset";
+                }
+              });
             }
-        }, 2000);
+          });
       }
     });
 
-    return () => {
-      window.removeEventListener("load", handleWindowLoad);
-    };
-    
   }, []);
 
-  useEffect(() => {
-    console.log(`windowLoaded : ${windowLoaded}`)
-    console.log(`finishedAnimation : ${finishedAnimation}`)
-    if (windowLoaded && finishedAnimation) {
-      StartFinalAnimations();
-    }
-  }, [windowLoaded, finishedAnimation]);
-
-
-
-  const StartFinalAnimations = () => {
-    gsap.to('.char', {
-      y: -100,
-      stagger: 0.05,
-      delay: 0.5,
-      duration: .1,
-      onComplete: () => {
-        gsap.to(containerRef.current, {
-          height: 0,
-          duration: 1,
-          onComplete: () => {
-            document.body.style.overflow = "unset";
-          }
-        });
-      }
-    });
-  };
 
   return (
     <div
