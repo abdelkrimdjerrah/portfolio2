@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
-const PreLoader = () => {
+const PreLoader = ({ loading }: any) => {
   const containerRef = useRef(null);
-  // let imageElement = document.getElementById('loaded')
+  const [finishedInitialAnimation, setFinishedInitialAnimation] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     new SplitType(".preloader-text");
@@ -14,28 +15,31 @@ const PreLoader = () => {
       delay: 0.5,
       duration: 0.1,
       onComplete: () => {
-        StartFinalAnimations();
+        setFinishedInitialAnimation(true);
       },
     });
   }, []);
 
-  const StartFinalAnimations = () => {
-    gsap.to(".char", {
-      y: -100,
-      stagger: 0.05,
-      delay: 3,
-      duration: 0.1,
-      onComplete: () => {
-        gsap.to(containerRef.current, {
-          height: 0,
-          duration: 1,
-          onComplete: () => {
-            document.body.style.overflow = "unset";
-          },
-        });
-      },
-    });
-  };
+  useEffect(() => {
+    console.log(`loading : ${loading}`);
+    if (finishedInitialAnimation && !loading) {
+      gsap.to(".char", {
+        y: -100,
+        stagger: 0.05,
+        delay: 3,
+        duration: 0.1,
+        onComplete: () => {
+          gsap.to(containerRef.current, {
+            height: 0,
+            duration: 1,
+            onComplete: () => {
+              document.body.style.overflow = "unset";
+            },
+          });
+        },
+      });
+    }
+  }, [loading, finishedInitialAnimation]);
 
   return (
     <div
