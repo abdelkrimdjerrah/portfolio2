@@ -21,7 +21,6 @@ const PreLoader = ({ loading }: any) => {
   }, []);
 
   useEffect(() => {
-    console.log(`loading : ${loading}`);
     if (finishedInitialAnimation && !loading) {
       gsap.to(".char", {
         y: -100,
