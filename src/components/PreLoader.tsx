@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
-const PreLoader = (isLoaded: any) => {
+const PreLoader = () => {
   const containerRef = useRef(null);
-  let finishedAnimation = false;
-
+  let imageElement = document.getElementById('loaded')
   useEffect(() => {
     document.body.style.overflow = "hidden";
     new SplitType(".preloader-text");
@@ -15,9 +14,11 @@ const PreLoader = (isLoaded: any) => {
       delay: 0.5,
       duration: 0.1,
       onComplete: () => {
-        if (isLoaded) {
-          StartFinalAnimations();
+        while(!imageElement){
+          console.log(imageElement)
+          imageElement = document.getElementById('loaded')
         }
+        StartFinalAnimations();
       },
     });
   }, []);

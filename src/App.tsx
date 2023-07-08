@@ -6,21 +6,14 @@ import { LiveProjects } from './sections/LiveProjects'
 import { UiUx } from './sections/UiUx'
 import { Streamlined } from "./sections/StreamLines";
 import PreLoader from "./components/PreLoader";
-import { useRef, useState } from "react";
 
 
 function App() {
 
-  const [isLoaded, setIsLoaded] = useState(false);
-  const appRef = useRef(null);
-  if(isLoaded){
-    console.log('loaded')
-  }
-  
   return (
     <>
-      <PreLoader isLoaded={isLoaded}/>
-      <main className='bg-background' ref={appRef} onLoad={() => setIsLoaded(true)}>        
+      <PreLoader/>
+      <main className='bg-background'>        
           <Hero />
           <div className="relative z-10 w-full overflow-x-clip">
             <About />

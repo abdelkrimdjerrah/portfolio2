@@ -2,6 +2,13 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 const abdelkrim_main = require("../images/abdelkrim_main.png");
 export const Hero = () => {
+
+
+  const handleImageLoad = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const imageElement = event.target as HTMLImageElement;
+    imageElement.id = 'loaded';
+  };
+
   // const targetRef = useRef<HTMLDivElement | null>(null);
   // const { scrollYProgress } = useScroll({
   //   target: targetRef,
@@ -63,7 +70,7 @@ export const Hero = () => {
     <div>
       <div className="w-full flex flex-col lg:flex-row h-fit lg:h-screen  text-[#6499af]">
         <div className=" w-full lg:w-[55%]">
-          <img className="w-[800px] abdelkrim " src={abdelkrim_main} alt="" />
+          <img className="w-[800px] abdelkrim " src={abdelkrim_main} alt="" onLoad={(e) => handleImageLoad(e) }/>
         </div>
         <div className="  w-full lg:w-[45%] justify-center flex items-center">
           <div className="flex flex-col items-center lg:items-start">
