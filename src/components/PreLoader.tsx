@@ -1,11 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import SplitType from "split-type";
 import { gsap } from "gsap";
 
 const PreLoader = () => {
   const containerRef = useRef(null);
+  const [finishedAnimation, setFinishedAnimation] = useState(false);
+
+  let windowLoaded = false
+
+  const handleWindowLoad = () => {
+    windowLoaded = true;
+  };
 
   useEffect(() => {
+
+  window.addEventListener("load", handleWindowLoad);
+    
     document.body.style.overflow = "hidden";
     new SplitType('.preloader-text');
     gsap.to('.char', {
@@ -14,28 +24,46 @@ const PreLoader = () => {
       delay: 0.5,
       duration: .1,
       onComplete: () => {
-        gsap.to('.char', {
-          y: -100,
-          stagger: 0.05,
-          delay: 3,
-          duration: .1,
-          onComplete: () => {
-            gsap.to(containerRef.current, {
-              height: 0,
-              duration: 1,
-              onComplete: () => {
-                document.body.style.overflow = "unset"
-              }
-            });
-          }
-        });
+        setFinishedAnimation(true)
+        setTimeout(() => {
+            if (windowLoaded) {
+              StartFinalAnimations();
+            }
+        }, 2000);
       }
     });
 
     return () => {
-      document.body.style.overflow = "unset";
+      window.removeEventListener("load", handleWindowLoad);
     };
+    
   }, []);
+
+  useEffect(() => {
+    if (windowLoaded && finishedAnimation) {
+      StartFinalAnimations();
+    }
+  }, [windowLoaded]);
+
+
+
+  const StartFinalAnimations = () => {
+    gsap.to('.char', {
+      y: -100,
+      stagger: 0.05,
+      delay: 0.5,
+      duration: .1,
+      onComplete: () => {
+        gsap.to(containerRef.current, {
+          height: 0,
+          duration: 1,
+          onComplete: () => {
+            document.body.style.overflow = "unset";
+          }
+        });
+      }
+    });
+  };
 
   return (
     <div
