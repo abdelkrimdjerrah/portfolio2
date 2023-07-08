@@ -13,6 +13,9 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const appRef = useRef(null);
+  if(isLoaded){
+    console.log('loaded')
+  }
   
   return (
     <>
