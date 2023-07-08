@@ -39,7 +39,7 @@ const PreLoader = () => {
       ref={containerRef}
       className="h-screen w-full text-white grid place-items-center transition-height"
     >
-      <div className="text-[70px]">
+      <div className="md:text-[70px] md:leading-[7rem] leading-[5rem] text-[25px]">
         <div className="preloader-text">{`Hi there :]`}</div>
       </div>
     </div>
