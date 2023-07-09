@@ -1,36 +1,8 @@
-import { useState } from "react";
-import {
-  IconGithub,
-  IconLinkedin,
-  IconInstagram,
-  IconBehance,
-} from "../icons/Icons";
+import { contact } from "../data/data";
+import { IconStyle } from "../components/IconStyle";
 import { EnvelopeSimple } from "phosphor-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const content = [
-  {
-    icon: IconInstagram,
-    title: "Instagram",
-    url: "https://www.instagram.com/abdelkrimdjerrah/",
-  },
-  {
-    icon: IconBehance,
-    title: "Behance",
-    url: "https://www.behance.net/abdelkrimdjerrah",
-  },
-  {
-    icon: IconGithub,
-    title: "Github",
-    url: "https://github.com/abdelkrimdjerrah",
-  },
-  {
-    icon: IconLinkedin,
-    title: "Linkedin",
-    url: "https://www.linkedin.com/in/abdelkrim-djerrah/",
-  },
-];
 
 export const Contact = () => {
   const { ref, inView } = useInView();
@@ -56,9 +28,9 @@ export const Contact = () => {
           }}
         >
           <div className="mx-auto grid w-full max-w-[120rem] lg:grid-cols-4  grid-cols-2 gap-24">
-            {content.map(({ icon: Icon, title, url }) => (
-              <div key={title} className="flex flex-col gap-5 items-center">
-                <IconComponent Icon={Icon} url={url} />
+            {contact.map(({ icon: Icon, url }) => (
+              <div key={url} className="flex flex-col gap-5 items-center">
+                <IconStyle Icon={Icon} url={url} animation/>
               </div>
             ))}
           </div>
@@ -68,49 +40,4 @@ export const Contact = () => {
   );
 };
 
-interface InterfaceIconComponent {
-  Icon: any;
-  url: string;
-}
 
-const IconComponent = ({ Icon, url }: InterfaceIconComponent) => {
-  const [isHovering, setIsHovering] = useState(false);
-  const [isOutHovering, setIsOutHovering] = useState("");
-
-  const openInNewTab = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const handleMouseOver = () => {
-    setIsHovering(true);
-    setIsOutHovering("");
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-    setIsOutHovering(" out ");
-  };
-
-  const hoverStyle = isHovering ? " scale-150 duration-200 " : "";
-
-  return (
-    <div
-      className="parent relative flex items-center justify-center cursor-pointer"
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-      onClick={() => openInNewTab(url)}
-    >
-      <span className="iconWrapper transform padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]">
-        <div
-          className={
-            ` text-white mb-3 z-20 absolute transform ` +
-            hoverStyle +
-            isOutHovering
-          }
-        >
-          <Icon />
-        </div>
-      </span>
-    </div>
-  );
-};

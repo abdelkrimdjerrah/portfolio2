@@ -4,7 +4,7 @@ import { devProjects } from '../data/data';
 export const LiveProjects = () => {
   return (
     <div>
-      <Cards data={devProjects}/>
+      <Cards data={devProjects} title='Dev Projects'/>
     </div>
   );
 };

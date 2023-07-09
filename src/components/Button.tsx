@@ -1,4 +1,3 @@
-
 interface BtnProps {
   children: React.ReactNode;
   onClick: () => void;
@@ -33,7 +32,6 @@ export default function Button({
       }
     >
       {children}
-
     </button>
   );
 }

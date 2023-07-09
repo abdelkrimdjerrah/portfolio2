@@ -22,7 +22,9 @@ function PostSlider({ images }: PostSliderProps) {
     const swiperInstance = swiperRef.current;
     if (swiperInstance) {
       setIsFirstSlide(swiperInstance.activeIndex === 0);
-      setIsLastSlide(swiperInstance.activeIndex === swiperInstance.slides.length - 1);
+      setIsLastSlide(
+        swiperInstance.activeIndex === swiperInstance.slides.length - 1
+      );
     }
   };
 

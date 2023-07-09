@@ -4,7 +4,8 @@ import { gsap } from "gsap";
 
 const PreLoader = ({ loading }: any) => {
   const containerRef = useRef(null);
-  const [finishedInitialAnimation, setFinishedInitialAnimation] = useState(false);
+  const [finishedInitialAnimation, setFinishedInitialAnimation] =
+    useState(false);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";

@@ -1,3 +1,4 @@
+import { IconStyle } from "../components/IconStyle";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { skills } from '../data/data'
@@ -21,13 +22,7 @@ export const Skills = () => {
         <div className="mx-auto grid w-full max-w-[120rem] md:grid-cols-4 py-20  sm:grid-cols-3 grid-cols-2 gap-24 px-28 md:px-0">
           {skills.map(({ icon: Icon, title }) => (
             <div key={title} className="flex flex-col gap-5 items-center">
-              <div className="relative flex items-center justify-center">
-                <span className="iconWrapper padding-8 mb-4 flex h-32 w-32 items-center justify-center rounded-[1.8rem] bg-[#151515]" />
-                <div className="text-[#009bc1] mb-3 z-20 absolute">
-                  <Icon />
-                </div>
-              </div>
-              <h3 className="mb-2 text-4xl text-[#a0ecff]">{title}</h3>
+              <IconStyle Icon={Icon} title={title}/>
             </div>
           ))}
         </div>

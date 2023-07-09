@@ -10,8 +10,14 @@ import {
   IconPhotoshop,
   IconIllustrator,
   IconTypescript,
-  IconFigma
+  IconFigma,
+  IconGithub,
+  IconLinkedin,
+  IconInstagram,
+  IconBehance,
 } from "../icons/Icons";
+
+export const about = "I'm a MERN stack web developer specializing in front-end develpment, with a passion for designing in UI/UX and brand design of what’s different, new, and unique with my own creativity. I seek to provide innovative solutions, from concept creations to final executions, with creativity, quality, and simplicity. I'm experienced, independent, and highly motivated, and I'm always looking to take on new challenges and provide the best possible results. Feel free to contact me with any questions or to discuss your next project."
 
 export const skills = [
   {
@@ -149,5 +155,28 @@ export const uiUxProjects = [
       "https://firebasestorage.googleapis.com/v0/b/akalaty-ce8bd.appspot.com/o/files%2FFrame%205.png%20%20%20%20%20%20%202023-7-5%2023%3A27%3A32?alt=media&token=6b1f3865-ba82-4262-a0e3-f65443bf5093",
     ],
     desc: "Bac Guide is an application to guide bac students, I did the UI/UX and later on I will implement it in React Native.",
+  },
+];
+
+export const contact = [
+  {
+    icon: IconInstagram,
+    title: "Instagram",
+    url: "https://www.instagram.com/abdelkrimdjerrah/",
+  },
+  {
+    icon: IconBehance,
+    title: "Behance",
+    url: "https://www.behance.net/abdelkrimdjerrah",
+  },
+  {
+    icon: IconGithub,
+    title: "Github",
+    url: "https://github.com/abdelkrimdjerrah",
+  },
+  {
+    icon: IconLinkedin,
+    title: "Linkedin",
+    url: "https://www.linkedin.com/in/abdelkrim-djerrah/",
   },
 ];
