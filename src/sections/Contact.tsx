@@ -1,8 +1,10 @@
 import { useState } from "react";
-import IconGithub from "../icons/IconGithub";
-import IconLinkedin from "../icons/IconLinkedin";
-import IconInstagram from "../icons/IconInstagram";
-import IconBehance from "../icons/IconBehance";
+import {
+  IconGithub,
+  IconLinkedin,
+  IconInstagram,
+  IconBehance,
+} from "../icons/Icons";
 import { EnvelopeSimple } from "phosphor-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
