@@ -26,7 +26,7 @@ const PreLoader = ({ loading }: any) => {
       gsap.to(".char", {
         y: -100,
         stagger: 0.05,
-        delay: 3,
+        delay: 2,
         duration: 0.1,
         onComplete: () => {
           gsap.to(containerRef.current, {
