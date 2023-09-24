@@ -81,7 +81,7 @@ export const devProjects = [
       "https://firebasestorage.googleapis.com/v0/b/akalaty-ce8bd.appspot.com/o/files%2FScreenshot%202023-07-05%20at%205.09.05%20PM.png%20%20%20%20%20%20%202023-7-5%2019%3A2%3A36?alt=media&token=9399be76-8279-42b3-a40d-6306c2d5db9b",
       "https://firebasestorage.googleapis.com/v0/b/akalaty-ce8bd.appspot.com/o/files%2FScreenshot%202023-07-05%20at%205.07.53%20PM.png%20%20%20%20%20%20%202023-7-5%2019%3A2%3A57?alt=media&token=f16d37ae-e89d-47fc-98f4-706a264c550e",
     ],
-    desc: "Project for L2 Informatique with collaboration of Younes KHENIFER, It's a Desktop & Web Application for doctors to manage appointments, nurses, medecines, payments, patients and more ... My role was to design UI/UX and implement the front-end using React Typescript & Tailwind. ",
+    desc: "Project for License Informatique with collaboration of Younes KHENIFER, It's a Desktop & Web Application for doctors to manage appointments, nurses, medecines, payments, patients and more ... My role was to design UI/UX and implement the front-end using React Typescript & Tailwind. ",
     github: "https://github.com/YounesKHENIFER/medicaly_electron",
     live: "https://medicaly.netlify.app/",
   },
